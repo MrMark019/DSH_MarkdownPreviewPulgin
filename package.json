@@ -1,0 +1,66 @@
+{
+  "name": "dsh-markdown-preview",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Markdown workspace panel for the DeepSeek Harness right Sidebar: browse the Session workspace, render Markdown, and export it as a standalone HTML file",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./lib/client.js",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "index.js",
+    "lib/client.js",
+    "locale/*.json",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar-right",
+        "@deepseek-ai/dsh-client-ui-sidebar-documentpreview",
+        "@deepseek-ai/dsh-api-remotes"
+      ],
+      "platform": "web"
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "markdown",
+    "markdown-preview",
+    "html-export",
+    "sidebar"
+  ],
+  "author": "MrMark019",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrMark019/DSH_MarkdownPreviewPulgin.git"
+  },
+  "homepage": "https://github.com/MrMark019/DSH_MarkdownPreviewPulgin#readme",
+  "bugs": {
+    "url": "https://github.com/MrMark019/DSH_MarkdownPreviewPulgin/issues"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/client.test.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.1.0"
+  }
+}

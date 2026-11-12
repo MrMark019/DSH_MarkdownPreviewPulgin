@@ -1,0 +1,9 @@
+# dsh-markdown-preview profile patch layer — one Host row.
+#
+# The row exists so the Loader has an enabled entry for this package: the browser
+# half is picked up by dsh-client-modules through the package's dsh.client
+# declaration, and this Host half registers nothing of its own (all file reads go
+# through the existing workspaceFiles Remote).
+- insert:
+    - id: markdown-preview
+      name: 'dsh-markdown-preview'
